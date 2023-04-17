@@ -56,20 +56,20 @@ body {
 .score {
   display: flex;
   justify-content: center;
-  font-weight: bold;
-  font-size: 8vh;
+  gap: 2rem;
   color: var(--foreground-color);
 }
-
-.score > * {
-  flex-grow: 1;
-  flex-basis: 0;
-  padding: 0 2vh;
-  margin: 1vh 0;
+.score p {
+  font-size: 3vh;
   opacity: 0.6;
 }
 
-.score > :first-child {
-  text-align: right;
-  border-right: 0.5vh dashed var(--foreground-color);
+#player-score,
+#computer-score {
+  font-weight: bold;
+  font-size: 8vh;
+  text-align: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  opacity: 0.6;
 }
