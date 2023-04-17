@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* To change color automatically  */
+:root {
+  --hue: 200;
+  --saturation: 50%;
+  --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+  --background-color: hsl(var(--hue), var(--saturation), 25%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+/* The brick objects */
+.brick {
+  --position: 50;
+
+  position: absolute;
+  background-color: var(--foreground-color);
+  top: calc(var(--position) * 1vh);
+  transform: translateY(-50%);
+  width: 2vh;
+  height: 10vh;
+}
+
+.brick.left {
+  left: 1vw;
+}
+
+.brick.right {
+  right: 1vw;
+}
+
+/* The ball object */
+.ball {
+  --x: 50;
+  --y: 50;
+  position: absolute;
+  background-color: var(--foreground-color);
+  border-radius: 100%;
+  left: calc(var(--x) * 1vw);
+  top: calc(var(--y) * 1vh);
+  transform: translate(-50%, -50%);
+  width: 3vh;
+  height: 3vh;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 8vh;
+  color: var(--foreground-color);
+}
+
+.score > * {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 2vh;
+  margin: 1vh 0;
+  opacity: 0.6;
+}
+
+.score > :first-child {
+  text-align: right;
+  border-right: 0.5vh dashed var(--foreground-color);
+}
